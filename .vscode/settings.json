@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "add-deps",
-        "create-module"
+        "create-module",
+        "coffees"
     ]
 }
