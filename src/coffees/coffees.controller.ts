@@ -1,11 +1,11 @@
 import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
+    Body,
+    Controller,
+    Delete,
+    Get,
+    Param,
+    Patch,
+    Post,
 } from '@nestjs/common';
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
@@ -13,30 +13,30 @@ import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 
 @Controller('coffees')
 export class CoffeesController {
-  constructor(private readonly coffeesService: CoffeesService) {}
+    constructor(private readonly coffeesService: CoffeesService) {}
 
-  @Post()
-  create(@Body() createCoffeeDto: CreateCoffeeDto) {
-    return this.coffeesService.create(createCoffeeDto);
-  }
+    @Post()
+    create(@Body() createCoffeeDto: CreateCoffeeDto) {
+        return this.coffeesService.create(createCoffeeDto);
+    }
 
-  @Get()
-  findAll() {
-    return this.coffeesService.findAll();
-  }
+    @Get()
+    findAll() {
+        return this.coffeesService.findAll();
+    }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.coffeesService.findOne(+id);
-  }
+    @Get(':id')
+    findOne(@Param('id') id: string) {
+        return this.coffeesService.findOne(+id);
+    }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
-    return this.coffeesService.update(+id, updateCoffeeDto);
-  }
+    @Patch(':id')
+    update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
+        return this.coffeesService.update(+id, updateCoffeeDto);
+    }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.coffeesService.remove(+id);
-  }
+    @Delete(':id')
+    remove(@Param('id') id: string) {
+        return this.coffeesService.remove(+id);
+    }
 }
